@@ -1,7 +1,3 @@
-"""
-Servidor Flask para la aplicación de detección de emociones.
-Este módulo define las rutas para procesar texto y devolver análisis de emociones.
-"""
 from flask import Flask, render_template, request
 from EmotionDetection.emotion_detection import emotion_predictor
 
@@ -9,9 +5,6 @@ app = Flask("Emotion Detector")
 
 @app.route("/emotionDetector")
 def emot_detector():
-    """
-    Analiza el texto recibido y devuelve las puntuaciones de las emociones.
-    """
     text_to_analyze = request.args.get('textToAnalyze')
     response = emotion_predictor(text_to_analyze)
 
